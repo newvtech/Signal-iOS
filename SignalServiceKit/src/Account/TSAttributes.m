@@ -4,13 +4,12 @@
 
 #import "TSAttributes.h"
 #import "TSAccountManager.h"
-#import "TSStorageManager+keyingMaterial.h"
 
 @implementation TSAttributes
 
 + (NSDictionary *)attributesFromStorageWithVoiceSupport {
-    return [self attributesWithSignalingKey:[TSStorageManager signalingKey]
-                            serverAuthToken:[TSStorageManager serverAuthToken]];
+    return [self attributesWithSignalingKey:[TSAccountManager signalingKey]
+                            serverAuthToken:[TSAccountManager serverAuthToken]];
 }
 
 + (NSDictionary *)attributesWithSignalingKey:(NSString *)signalingKey
